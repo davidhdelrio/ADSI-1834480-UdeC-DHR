@@ -305,7 +305,7 @@ include_once("headerynav.php");
   </thead>
   <tbody>
 <?php
-$dbname='encuestaudc_sjba';
+$dbname='encuestaudc_dhr';
 $user='root';
 $pass='';
 $dsn="mysql:host=localhost;dbname=$dbname";

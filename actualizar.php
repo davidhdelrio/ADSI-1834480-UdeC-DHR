@@ -8,7 +8,7 @@
   <meta name="author" content="">
   <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <title>Portal UDC</title>
+  <title>Portal UdeC</title>
 </head>
 <body>
   <?php
@@ -72,7 +72,7 @@ or $_GET['calificatucarrera']== null or $_GET['calificatucarrera']=='' ){
 
 try {
 
-  $dbname='encuestaudc_sjba';
+  $dbname='encuestaudc_dhr';
     $user='root';
     $pass='';
     $dsn="mysql:host=localhost;dbname=$dbname";
@@ -82,7 +82,7 @@ try {
     $conn=new PDO($dsn,$user,$pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-     $sql0 = "SELECT * FROM genero_sjba WHERE genero = ?";
+     $sql0 = "SELECT * FROM genero_dhr WHERE genero = ?";
      $stm0 = $conn->prepare($sql0);
      $stm0->execute($genero);
 
@@ -91,7 +91,7 @@ try {
      $row0->id;
      $row0->genero; }                               
                                                                                                                      
-    $sql11 = "SELECT * FROM region_sjba WHERE region = ?";
+    $sql11 = "SELECT * FROM region_dhr WHERE region = ?";
     $stm2 = $conn->prepare($sql11);
     $stm2->execute($region);
 
@@ -100,7 +100,7 @@ try {
      $row2->id;
      $row2->region; }                                      
                                      
-    $sql12 = "SELECT * FROM estadocivil_sjba WHERE estadocivil = ?";
+    $sql12 = "SELECT * FROM estadocivil_dhr WHERE estadocivil = ?";
     $stm3 = $conn->prepare($sql12);
     $stm3->execute($estadocivil);
 
@@ -109,7 +109,7 @@ try {
     $row3->id;
     $row3->estadocivil;  }
 
-    $sql13 = "SELECT * FROM tipodeinstitucion_sjba WHERE tipodeinstitucion = ?";
+    $sql13 = "SELECT * FROM tipodeinstitucion_dhr WHERE tipodeinstitucion = ?";
     $stm4 = $conn->prepare($sql13);
     $stm4->execute($tipodeinstitucion);
 
@@ -118,7 +118,7 @@ try {
     $row4->id;
     $row4->tipodeinstitucion;  }
 
-    $sql14 = "SELECT * FROM tiempo_de_graduado_sjba WHERE tiempo_de_graduado = ?";
+    $sql14 = "SELECT * FROM tiempo_de_graduado_dhr WHERE tiempo_de_graduado = ?";
     $stm5 = $conn->prepare($sql14);
     $stm5->execute($tiempo_de_graduado);
     
@@ -127,7 +127,7 @@ try {
      $row5->id;
      $row5->tiempo_de_graduado; }
 
-    $sql15 = "SELECT * FROM  nivelacademicopapa_sjba WHERE nivelacademico_papa = ?";
+    $sql15 = "SELECT * FROM  nivelacademicopapa_dhr WHERE nivelacademico_papa = ?";
     $stm6 = $conn->prepare($sql15);
     $stm6->execute($nivelacademico_papa);
    
@@ -136,7 +136,7 @@ try {
      $row6->id;
      $row6->nivelacademico_papa; }
 
-    $sql16 = "SELECT * FROM  nivelacademicomama_sjba WHERE nivelacademico_mama = ?";
+    $sql16 = "SELECT * FROM  nivelacademicomama_dhr WHERE nivelacademico_mama = ?";
     $stm7 = $conn->prepare($sql16);
     $stm7->execute($nivelacademico_mama);
   
@@ -145,7 +145,7 @@ try {
      $row7->id;
      $row7->nivelacademico_mama; }
 
-     $sql16 = "SELECT * FROM  tipodevivienda_sjba WHERE tipodevivienda = ?";
+     $sql16 = "SELECT * FROM  tipodevivienda_dhr WHERE tipodevivienda = ?";
     $stm8 = $conn->prepare($sql16);
     $stm8->execute($tipodevivienda);
 
@@ -154,7 +154,7 @@ try {
      $row8->id;
      $row8->tipodevivienda; }
 
-    $sql17 = "SELECT * FROM  calificatucarrera_sjba WHERE calificatucarrera = ?";
+    $sql17 = "SELECT * FROM  calificatucarrera_dhr WHERE calificatucarrera = ?";
     $stm9 = $conn->prepare($sql17);
     $stm9->execute($calificatucarrera);
 
@@ -163,7 +163,7 @@ try {
      $row9->id;
      $row9->calificatucarrera; }
 
-      $sql=" UPDATE encuesta_sjba SET 
+      $sql=" UPDATE encuesta_dhr SET 
        
        nombre=?,
         apellido=?,

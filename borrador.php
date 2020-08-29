@@ -23,7 +23,7 @@
   <tbody>
 <?php
 
-$dbname='encuestaudc_sjba';
+$dbname='encuestaudc_dhr';
 $user='root';
 $pass='';
 $dsn="mysql:host=localhost;dbname=$dbname";
@@ -33,7 +33,7 @@ $dsn="mysql:host=localhost;dbname=$dbname";
 $conn=new PDO($dsn,$user,$pass);
 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
- $sql="SELECT * FROM encuesta_sjba WHERE identificacion= ?";
+ $sql="SELECT * FROM encuesta_dhr WHERE identificacion= ?";
  $stm=$conn->prepare($sql)->execute(array($identificacion));
   ?>
   <?php

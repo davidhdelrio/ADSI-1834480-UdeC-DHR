@@ -4,7 +4,7 @@
   
 <?php
  
-    $dbname='encuestaudc_sjba';
+    $dbname='encuestaudc_dhr';
     $user='root';
     $pass='';
     $dsn="mysql:host=localhost;dbname=$dbname";
@@ -14,65 +14,65 @@
     $conn=new PDO($dsn,$user,$pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $sql0 = "SELECT * FROM genero_sjba";
+    $sql0 = "SELECT * FROM genero_dhr";
     $stm0 = $conn->prepare($sql0);
     $stm0->execute();
 
-    $sql11 = "SELECT * FROM region_sjba";
+    $sql11 = "SELECT * FROM region_dhr";
     $stm2 = $conn->prepare($sql11);
     $stm2->execute();
    
-    $sql12 = "SELECT * FROM estadocivil_sjba";
+    $sql12 = "SELECT * FROM estadocivil_dhr";
     $stm3 = $conn->prepare($sql12);
     $stm3->execute();
 
-    $sql13 = "SELECT * FROM tipodeinstitucion_sjba";
+    $sql13 = "SELECT * FROM tipodeinstitucion_dhr";
     $stm4 = $conn->prepare($sql13);
     $stm4->execute();
 
-    $sql14 = "SELECT * FROM tiempo_de_graduado_sjba";
+    $sql14 = "SELECT * FROM tiempo_de_graduado_dhr";
     $stm5 = $conn->prepare($sql14);
     $stm5->execute();
     
-    $sql15 = "SELECT * FROM  nivelacademicopapa_sjba";
+    $sql15 = "SELECT * FROM  nivelacademicopapa_dhr";
     $stm6 = $conn->prepare($sql15);
     $stm6->execute();
    
-    $sql16 = "SELECT * FROM  nivelacademicomama_sjba";
+    $sql16 = "SELECT * FROM  nivelacademicomama_dhr";
     $stm7 = $conn->prepare($sql16);
     $stm7->execute();
   
-     $sql16 = "SELECT * FROM  tipodevivienda_sjba";
+     $sql16 = "SELECT * FROM  tipodevivienda_dhr";
     $stm8 = $conn->prepare($sql16);
     $stm8->execute();
 
-    $sql17 = "SELECT * FROM  calificatucarrera_sjba";
+    $sql17 = "SELECT * FROM  calificatucarrera_dhr";
     $stm9 = $conn->prepare($sql17);
     $stm9->execute();
 
 //SELECCIONAR DATOS DE LA TABLA ENCUESTA 
-$sql="SELECT region_sjba.region,
-genero_sjba.genero,
-estadocivil_sjba.estadocivil,
-nivelacademicomama_sjba.nivelacademico_mama,
-nivelacademicopapa_sjba.nivelacademico_papa,
-tipodevivienda_sjba.tipodevivienda,
-tipodeinstitucion_sjba.tipodeinstitucion,
-tiempo_de_graduado_sjba.tiempo_de_graduado,
-calificatucarrera_sjba.calificatucarrera,
-encuesta_sjba.id_sjba,encuesta_sjba.identificacion,encuesta_sjba.nombre,encuesta_sjba.apellido,encuesta_sjba.email,
-encuesta_sjba.telefono,encuesta_sjba.direccion,encuesta_sjba.nacimiento,encuesta_sjba.actividaddelpapa,
-encuesta_sjba.actividaddelamama,encuesta_sjba.carrera,encuesta_sjba.id_ingresoeconomico,encuesta_sjba.asignaturas_matriculadas 
-FROM encuesta_sjba 
-INNER JOIN region_sjba ON encuesta_sjba.id_region = region_sjba.id
-INNER JOIN genero_sjba ON encuesta_sjba.id_genero = genero_sjba.id
-INNER JOIN estadocivil_sjba ON encuesta_sjba.id_estadocivil = estadocivil_sjba.id
-INNER JOIN nivelacademicomama_sjba ON encuesta_sjba.id_nivelacademicoMama = nivelacademicomama_sjba.id
-INNER JOIN nivelacademicopapa_sjba ON encuesta_sjba.id_nivelacademicoPapa = nivelacademicopapa_sjba.id
-INNER JOIN tipodevivienda_sjba ON encuesta_sjba.id_tipodevivienda = tipodevivienda_sjba.id
-INNER JOIN tipodeinstitucion_sjba ON encuesta_sjba.tipodeinstitucion = tipodeinstitucion_sjba.id
-INNER JOIN tiempo_de_graduado_sjba ON encuesta_sjba.tiempo_de_graduado = tiempo_de_graduado_sjba.id
-INNER JOIN calificatucarrera_sjba ON encuesta_sjba.calificatucarrera = calificatucarrera_sjba.id
+$sql="SELECT region_dhr.region,
+genero_dhr.genero,
+estadocivil_dhr.estadocivil,
+nivelacademicomama_dhr.nivelacademico_mama,
+nivelacademicopapa_dhr.nivelacademico_papa,
+tipodevivienda_dhr.tipodevivienda,
+tipodeinstitucion_dhr.tipodeinstitucion,
+tiempo_de_graduado_dhr.tiempo_de_graduado,
+calificatucarrera_dhr.calificatucarrera,
+encuesta_dhr.id_dhr,encuesta_dhr.identificacion,encuesta_dhr.nombre,encuesta_dhr.apellido,encuesta_dhr.email,
+encuesta_dhr.telefono,encuesta_dhr.direccion,encuesta_dhr.nacimiento,encuesta_dhr.actividaddelpapa,
+encuesta_dhr.actividaddelamama,encuesta_dhr.carrera,encuesta_dhr.id_ingresoeconomico,encuesta_dhr.asignaturas_matriculadas 
+FROM encuesta_dhr
+INNER JOIN region_dhr ON encuesta_dhr.id_region = region_dhr.id
+INNER JOIN genero_dhr ON encuesta_dhr.id_genero = genero_dhr.id
+INNER JOIN estadocivil_dhr ON encuesta_dhr.id_estadocivil = estadocivil_dhr.id
+INNER JOIN nivelacademicomama_dhr ON encuesta_dhr.id_nivelacademicoMama = nivelacademicomama_dhr.id
+INNER JOIN nivelacademicopapa_dhr ON encuesta_dhr.id_nivelacademicoPapa = nivelacademicopapa_dhr.id
+INNER JOIN tipodevivienda_dhr ON encuesta_dhr.id_tipodevivienda = tipodevivienda_dhr.id
+INNER JOIN tipodeinstitucion_dhr ON encuesta_dhr.tipodeinstitucion = tipodeinstitucion_dhr.id
+INNER JOIN tiempo_de_graduado_dhr ON encuesta_dhr.tiempo_de_graduado = tiempo_de_graduado_dhr.id
+INNER JOIN calificatucarrera_dhr ON encuesta_dhr.calificatucarrera = calificatucarrera_dhr.id
  WHERE identificacion = ?";
 
 $stm=$conn->prepare($sql);
@@ -82,7 +82,7 @@ $stm->execute(array($_SESSION['identificacion']));
 $rows10=$stm->fetchAll(PDO::FETCH_OBJ);
 foreach ($rows10 as $row21){
 
-$row21->id_sjba; 
+$row21->id_dhr; 
 $row21->identificacion; 
   $row21->nombre;
   $row21->apellido;
